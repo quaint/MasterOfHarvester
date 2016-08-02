@@ -1,0 +1,286 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		220281B61D51382F009A6881 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220281B51D51382F009A6881 /* AppDelegate.swift */; };
+		220281B81D51382F009A6881 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220281B71D51382F009A6881 /* GameScene.swift */; };
+		220281BA1D51382F009A6881 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 220281B91D51382F009A6881 /* GameScene.sks */; };
+		220281BC1D51382F009A6881 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 220281BB1D51382F009A6881 /* Assets.xcassets */; };
+		220281BF1D51382F009A6881 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220281BD1D51382F009A6881 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		220281B21D51382F009A6881 /* MasterOfHarvester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterOfHarvester.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		220281B51D51382F009A6881 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		220281B71D51382F009A6881 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		220281B91D51382F009A6881 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		220281BB1D51382F009A6881 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		220281BE1D51382F009A6881 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		220281C01D51382F009A6881 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		220281AF1D51382F009A6881 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		220281A91D51382F009A6881 = {
+			isa = PBXGroup;
+			children = (
+				220281B41D51382F009A6881 /* MasterOfHarvester */,
+				220281B31D51382F009A6881 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		220281B31D51382F009A6881 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				220281B21D51382F009A6881 /* MasterOfHarvester.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		220281B41D51382F009A6881 /* MasterOfHarvester */ = {
+			isa = PBXGroup;
+			children = (
+				220281B51D51382F009A6881 /* AppDelegate.swift */,
+				220281B71D51382F009A6881 /* GameScene.swift */,
+				220281B91D51382F009A6881 /* GameScene.sks */,
+				220281BB1D51382F009A6881 /* Assets.xcassets */,
+				220281BD1D51382F009A6881 /* MainMenu.xib */,
+				220281C01D51382F009A6881 /* Info.plist */,
+			);
+			path = MasterOfHarvester;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		220281B11D51382F009A6881 /* MasterOfHarvester */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 220281C31D51382F009A6881 /* Build configuration list for PBXNativeTarget "MasterOfHarvester" */;
+			buildPhases = (
+				220281AE1D51382F009A6881 /* Sources */,
+				220281AF1D51382F009A6881 /* Frameworks */,
+				220281B01D51382F009A6881 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MasterOfHarvester;
+			productName = MasterOfHarvester;
+			productReference = 220281B21D51382F009A6881 /* MasterOfHarvester.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		220281AA1D51382F009A6881 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = GlobalLogic;
+				TargetAttributes = {
+					220281B11D51382F009A6881 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 220281AD1D51382F009A6881 /* Build configuration list for PBXProject "MasterOfHarvester" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 220281A91D51382F009A6881;
+			productRefGroup = 220281B31D51382F009A6881 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				220281B11D51382F009A6881 /* MasterOfHarvester */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		220281B01D51382F009A6881 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				220281BC1D51382F009A6881 /* Assets.xcassets in Resources */,
+				220281BA1D51382F009A6881 /* GameScene.sks in Resources */,
+				220281BF1D51382F009A6881 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		220281AE1D51382F009A6881 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				220281B81D51382F009A6881 /* GameScene.swift in Sources */,
+				220281B61D51382F009A6881 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		220281BD1D51382F009A6881 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				220281BE1D51382F009A6881 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		220281C11D51382F009A6881 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		220281C21D51382F009A6881 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		220281C41D51382F009A6881 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MasterOfHarvester/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.globallogic.MasterOfHarvester;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		220281C51D51382F009A6881 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MasterOfHarvester/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.globallogic.MasterOfHarvester;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		220281AD1D51382F009A6881 /* Build configuration list for PBXProject "MasterOfHarvester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				220281C11D51382F009A6881 /* Debug */,
+				220281C21D51382F009A6881 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		220281C31D51382F009A6881 /* Build configuration list for PBXNativeTarget "MasterOfHarvester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				220281C41D51382F009A6881 /* Debug */,
+				220281C51D51382F009A6881 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 220281AA1D51382F009A6881 /* Project object */;
+}
