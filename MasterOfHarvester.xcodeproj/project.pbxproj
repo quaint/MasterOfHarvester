@@ -12,6 +12,7 @@
 		220281BA1D51382F009A6881 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 220281B91D51382F009A6881 /* GameScene.sks */; };
 		220281BC1D51382F009A6881 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 220281BB1D51382F009A6881 /* Assets.xcassets */; };
 		220281BF1D51382F009A6881 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220281BD1D51382F009A6881 /* MainMenu.xib */; };
+		220281C71D513CE7009A6881 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220281C61D513CE7009A6881 /* Keyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		220281BB1D51382F009A6881 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		220281BE1D51382F009A6881 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		220281C01D51382F009A6881 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		220281C61D513CE7009A6881 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				220281BB1D51382F009A6881 /* Assets.xcassets */,
 				220281BD1D51382F009A6881 /* MainMenu.xib */,
 				220281C01D51382F009A6881 /* Info.plist */,
+				220281C61D513CE7009A6881 /* Keyboard.swift */,
 			);
 			path = MasterOfHarvester;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				220281B81D51382F009A6881 /* GameScene.swift in Sources */,
+				220281C71D513CE7009A6881 /* Keyboard.swift in Sources */,
 				220281B61D51382F009A6881 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
