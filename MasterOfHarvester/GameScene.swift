@@ -22,55 +22,65 @@ enum RotateDirection: Int {
 }
 
 class GameScene: SKScene {
-    
+
     var rotateDirection = RotateDirection.none
     var moveDirection = MoveDirection.none
-    var spaceShip: SKSpriteNode!
+    var combine: SKSpriteNode!
     var previousTime: Double = 0
     let rotateSpeed: Double = 1
     let moveSpeed: Double = 50
+    let gridSize = 20
     let fieldGrid = 10
     let fieldX = 0
     let fieldY = 0
-    
+    let combineAngleHeader = CGFloat(60 * M_PI / 180)
+    var combineHeaderX1: Int = 0
+    var combineHeaderY1: Int = 0
+    var combineHeaderX2: Int = 0
+    var combineHeaderY2: Int = 0
+    var combineRadiusHeader: Double = 0
+    let field = SKNode()
+
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!"
-        myLabel.fontSize = 45
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
-        myLabel.zPosition = 1
-        self.addChild(myLabel)
-        
+
+//        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
+//        myLabel.text = "Hello, World!"
+//        myLabel.fontSize = 45
+//        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+//        myLabel.zPosition = 1
+//        self.addChild(myLabel)
+
 //        let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
 //        sprite.runAction(SKAction.repeatActionForever(action))
         
-        let field: SKNode = SKNode()
-        for x in 0..<40 {
-            for y in 0..<30 {
-                let fieldPart = SKSpriteNode(imageNamed: "Field")
-                fieldPart.position = CGPoint(x: x * 20, y: y * 20)
+        for x in 0..<45 {
+            for y in 0..<35 {
+                let fieldPart = SKSpriteNode(imageNamed: "field")
+                fieldPart.position = CGPoint(x: x * gridSize, y: y * gridSize)
+                fieldPart.name = "\(x);\(y)"
                 field.addChild(fieldPart)
             }
         }
         let fieldTexture = self.view?.textureFromNode(field)
         let fieldNode = SKSpriteNode(texture: fieldTexture)
-        fieldNode.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+        fieldNode.position = CGPoint(x:fieldNode.size.width/2, y:fieldNode.size.height/2)
+        fieldNode.name = "field"
         self.addChild(fieldNode)
 
-        spaceShip = SKSpriteNode(imageNamed:"Combine")
-        spaceShip.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
-        spaceShip.zPosition = 2
-        spaceShip.anchorPoint = CGPoint(x: 0.65, y: 0.5)
-        self.addChild(spaceShip)
+        combine = SKSpriteNode(imageNamed:"combine")
+        combine.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+        combine.zPosition = 2
+        combine.anchorPoint = CGPoint(x: 0.65, y: 0.5)
+        combineRadiusHeader = Double(combine.size.height / 2)
+        self.addChild(combine)
     }
-    
+
     func getPointsForLine(x1: Int, y1: Int, x2: Int, y2: Int) -> [[Int]] {
         var ix0 = (x1 - fieldX) / fieldGrid
         var iy0 = (y1 - fieldY) / fieldGrid
         let ix1 = (x2 - fieldX) / fieldGrid
         let iy1 = (y2 - fieldY) / fieldGrid
-            
+
         let dx = abs(ix1 - ix0)
         let sx = ix0 < ix1 ? 1 : -1
         let dy = abs(iy1 - iy0)
@@ -95,11 +105,41 @@ class GameScene: SKScene {
         return points
     }
     
+    func updateHeader() {
+        let diagonalAngle1 = Double(combine.zRotation + combineAngleHeader)
+        let diagonalAngle2 = Double(combine.zRotation - combineAngleHeader)
+        combineHeaderX1 = Int(cos(diagonalAngle1) * combineRadiusHeader + Double(combine.position.x))
+        combineHeaderY1 = Int(sin(diagonalAngle1) * combineRadiusHeader + Double(combine.position.y))
+        combineHeaderX2 = Int(cos(diagonalAngle2) * combineRadiusHeader + Double(combine.position.x))
+        combineHeaderY2 = Int(sin(diagonalAngle2) * combineRadiusHeader + Double(combine.position.y))
+    }
+    
+    func updateFromCombine() {
+        let headerPoints = getPointsForLine(combineHeaderX1, y1: combineHeaderY1, x2: combineHeaderX2, y2: combineHeaderY2)
+        for i in 0..<headerPoints.count {
+            let points = headerPoints[i]
+            let x = points[0]
+            let y = points[1]
+            let fieldPart = SKSpriteNode(imageNamed: "field_done")
+            fieldPart.position = CGPoint(x: x * gridSize, y: y * gridSize)
+            fieldPart.zPosition = 2
+            fieldPart.name = "\(x);\(y)"
+            field.childNodeWithName("\(x);\(y)")?.removeFromParent()
+            field.addChild(fieldPart)
+        }
+        let fieldTexture = self.view?.textureFromNode(field)
+        let fieldNode = SKSpriteNode(texture: fieldTexture)
+        fieldNode.position = CGPoint(x:fieldNode.size.width/2, y:fieldNode.size.height/2)
+        fieldNode.name = "field"
+        self.childNodeWithName("field")?.removeFromParent()
+        self.addChild(fieldNode)
+    }
+
     override func mouseDown(theEvent: NSEvent) {
         /* Called when a mouse click occurs */
 //        let location = theEvent.locationInNode(self)
     }
-    
+
     override func update(currentTime: CFTimeInterval) {
         super.update(currentTime)
         updateKeyboardState()
@@ -107,9 +147,11 @@ class GameScene: SKScene {
         let move = CGFloat(Double(moveDirection.rawValue) * delta * moveSpeed)
         let rotate = Double(rotateDirection.rawValue) * delta * rotateSpeed
         previousTime = currentTime
-        spaceShip.zRotation = spaceShip.zRotation + CGFloat(rotate)
-        spaceShip.position = CGPoint(x: spaceShip.position.x + cos(spaceShip.zRotation) * move,
-                                     y: spaceShip.position.y + sin(spaceShip.zRotation) * move)
+        combine.zRotation = combine.zRotation + CGFloat(rotate)
+        combine.position = CGPoint(x: combine.position.x + cos(combine.zRotation) * move,
+                                     y: combine.position.y + sin(combine.zRotation) * move)
+        updateHeader()
+        updateFromCombine()
     }
 
     func updateKeyboardState() {
@@ -122,7 +164,7 @@ class GameScene: SKScene {
         } else if (Keyboard.sharedKeyboard.justPressed(.Right)) {
             rotateDirection = .right
         }
-        
+
         if (Keyboard.sharedKeyboard.justReleased(.Up, .Down)) {
             moveDirection = .none
         }
@@ -130,15 +172,15 @@ class GameScene: SKScene {
             rotateDirection = .none
         }
     }
-    
+
     override func didFinishUpdate() {
         Keyboard.sharedKeyboard.update()
     }
-    
+
     override func keyUp(theEvent: NSEvent) {
         Keyboard.sharedKeyboard.handleKey(theEvent, isDown: false)
     }
-    
+
     override func keyDown(theEvent: NSEvent) {
         Keyboard.sharedKeyboard.handleKey(theEvent, isDown: true)
     }
